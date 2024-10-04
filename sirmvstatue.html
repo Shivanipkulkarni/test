@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>campus tour</title>
+    <style>
+       body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        img {
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+            display: block; /* Remove space below the image */
+        }
+
+         /* Modal Styles */
+         .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #decbf6;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2px;
+            position: bottom;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="sirmvstatue.jpeg" usemap="#image-map" >
+
+    <map name="image-map">
+        <area  shape="rect" href="stairs.html" coords="419,400,700,650" >
+        <area shape="rect" coords="1013,200,1200,750"  href="https://campusuvce.in/" >
+        <area shape="rect" coords="113,200,300,750"  href="#" onclick="showInfo('CO-OPERATIVE SOCIETY', 'Society is a place where students can buy necessary study materials BUT ONLY CASH TAKEN AND UNDER CONSTRUCTION RN'); return false;">
+    </map>
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+    </div>
+</div>
+
+<script>
+    // Get the modal and elements to set content
+    var modal = document.getElementById("myModal");
+    var modalTitle = document.getElementById("modal-title");
+    var modalDescription = document.getElementById("modal-description");
+
+    // Function to show the modal with information
+    function showInfo(title, description) {
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modal.style.display = "block";
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+    <footer>
+        <p>&copy; Batch of 2027-AIML. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

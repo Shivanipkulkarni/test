@@ -3,43 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>campus tour</title>
+    <title>Campus Tour</title>
     <style>
-       body {
+        body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
             line-height: 1.6;
         }
+        
         img {
             width: 100%; /* Full width */
             height: 100%; /* Full height */
             object-fit: cover; /* Maintain aspect ratio and cover the area */
             display: block; /* Remove space below the image */
         }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #5f3776;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: #764d9a;
+        }
+
+        .back-button .arrow {
+            display: inline-block;
+            margin-right: 8px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            padding: 5px;
+            transform: rotate(135deg);
+        }
+
         /* Footer */
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 2px;
-            position: bottom;
+            padding: 10px;
+            position: fixed;
             width: 100%;
             bottom: 0;
         }
     </style>
 </head>
 <body>
-    <img src="stairs.jpeg" usemap="#image-map" >
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">
+        <span class="arrow"></span> Back
+    </button>
+
+    <img src="stairs.jpeg" usemap="#image-map">
 
     <map name="image-map">
-        <area  shape="rect" href="minchu.html" coords="419,80,900,750" >
-        <area shape="rect" coords="1013,200,1500,850"  href="right.html" >
-        <area shape="rect" coords="10,200,200,850"  href="left.html" >
+        <area shape="rect" coords="419,80,900,750" href="minchu.html">
+        <area shape="rect" coords="1013,200,1500,850" href="right.html">
+        <area shape="rect" coords="10,200,200,850" href="left.html">
     </map>
+
     <footer>
         <p>&copy; Batch of 2027-AIML. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
+

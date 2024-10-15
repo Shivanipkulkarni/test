@@ -7,6 +7,39 @@
 body{
     margin: 0;
     padding: 0;
+
+    /* Back Button */
+    .back-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #5f3776;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: #5f3776;
+        }
+
+        .back-button .arrow {
+            display: inline-block;
+            margin-right: 8px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            padding: 5px;
+            transform: rotate(135deg);
+        }
 }
 .header{
     min-height: 100vh;
@@ -128,6 +161,12 @@ position: relative;
     </style>
 </head>
 <body>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">
+        <span class="arrow"></span> Back
+    </button>
+
     <section class="header">
         <nav>
             <div class="nav-links">
@@ -149,5 +188,12 @@ position: relative;
         <footer>
             <p>&copy; Batch of 2027-AIML. All Rights Reserved.</p>
         </footer>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        
 </body>
 </html>
